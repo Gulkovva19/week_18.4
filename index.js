@@ -16,7 +16,9 @@ list.addEventListener('click', function (ev) {
     }
 }, false);
 
-function newElement() {
+
+const newdo = document.querySelector('#btn');
+newdo.addEventListener("click", () => {
     let li = document.createElement('li');
     let inputValue = document.getElementById('toDoEl').value;
     let t = document.createTextNode(inputValue);
@@ -33,7 +35,7 @@ function newElement() {
     span.appendChild(txt);
     li.appendChild(span);
     toLocal();
-}
+});
 
 if (localStorage.getItem('todos')) {
     list.innerHTML = localStorage.getItem('todos');
